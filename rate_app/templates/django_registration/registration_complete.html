@@ -1,0 +1,23 @@
+{%include 'base.html'%}
+{%load bootstrap4%}
+{%load static%}
+{%block content%}
+<div class="container">
+  <!-- <h5>Welcome to Rate-App. Create your profile and enjoy posting from thence.</h5>
+
+ <a href="{%url 'new_profile' request.user%}"><button class="btn btn-outline-light">Profile Create</button></a>  -->
+
+ <div class="jumbotron card card-image" style="background-image: url(https://mdbootstrap.com/img/Photos/Others/gradient1.jpg);">
+  <div class="text-white text-center py-5 px-4">
+    <div>
+      <h2 class="card-title h1-responsive pt-3 mb-5 font-bold"><strong>Welcome Aboard the Rate-App</strong></h2>
+      <p class="mx-5 mb-5">Your account was successfully created and you can now go ahead and create your profile to proceed.To do so click on the button below.
+      </p>
+      <a href="{%url 'new_profile' request.user%}" class="btn btn-outline-white btn-md"><i class="fas fa-clone left"></i> Create Profile</a>
+    </div>
+  </div>
+</div>
+
+</div>
+
+{%endblock%}

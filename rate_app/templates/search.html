@@ -1,0 +1,46 @@
+{%include 'base.html'%}
+
+{%block content%}
+<div class="container">
+  <div class="row">
+    {% if articles%}
+      <h2>Found {{ articles|length }} of searched term {{message}}</h2>
+    {% else %}
+      <h2> Found 0 articles for the search term {{message}}</h2>
+    {% endif %}
+
+  </div>
+
+  <div class="row">
+    {%if projects%}
+    {%for project in projects%}
+    <div class="col-md-6">
+      <div class="card card-cascade wider reverse">
+
+        <!-- Card image -->
+        <div class="view view-cascade overlay">
+          <img class="card-img-top" src="{{ project.image.url}}"
+            alt="Card image cap">
+          <a href="#!">
+            <div class="mask rgba-white-slight"></div>
+          </a>
+        </div>
+      
+        <!-- Card content -->
+        <div class="card-body card-body-cascade text-center">
+      
+          <!-- Title -->
+          <h4 class="card-title"><strong>{{project.title}}</strong></h4>
+          <!-- Subtitle -->
+          <a href="{{project.project_link}}"><h6 class="font-weight-bold indigo-text py-2">Project Link: {{project.project_link}}</h6></a> 
+          <!-- Text -->
+          <p class="card-text">Description: {{project.description}} </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+{%endblock%}

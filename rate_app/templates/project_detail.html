@@ -1,0 +1,97 @@
+{%include 'base.html'%}
+{%load bootstrap4%}
+{%block content%}
+<!-- Card -->
+<div class="container">
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+      <div class="card card-cascade wider reverse">
+
+        <!-- Card image -->
+        <div class="view view-cascade overlay">
+          <img class="card-img-top" src="{{ project.image.url}}"
+            alt="Card image cap">
+          <a href="#!">
+            <div class="mask rgba-white-slight"></div>
+          </a>
+        </div>
+      
+        <!-- Card content -->
+        <div class="card-body card-body-cascade text-center">
+      
+          <!-- Title -->
+          <h4 class="card-title"><strong>{{project.title}}</strong></h4>
+          <!-- Subtitle -->
+          <a href="{{project.project_link}}"><h6 class="font-weight-bold indigo-text py-2">Project Link: {{project.project_link}}</h6></a> 
+          <!-- Text -->
+          <p class="card-text">Description: {{project.description}} </p>
+            <h5>Average Ratings</h5>
+          <div class="badge badge-dark">Design: {{average_design}}</div>
+          <div class="badge badge-info">Usability: {{average_usability}}</div>
+          <div class="badge badge-primary">Content: {{average_content}}</div>
+          <!-- review -->
+          <h4>Rate this Project</h4>
+          <div class="media-body text-center text-md-left ml-md-3 ml-0">
+            <h5 class="mt-0 font-weight-bold blue-text mb-3">{{review.user}}</h5>
+            <form method="POST" role="form" action="{% url 'project_detail' project.id %}" enctype="multipart/form-data">
+              {%csrf_token%}
+              
+              {{form.as_p}}
+              <!-- <div> -->
+                <!-- <label for="comment">Review</label>
+                <textarea name="comment" id="comment" class="form-control" cols="30" rows="5"></textarea>
+
+                <label for="design">Design</label>
+                <input type="text" min="0" max="10" class="form-control" >
+
+                <label for="usability">Usability</label>
+                <input type="text" min="0" max="10" class="form-control" >
+
+                <label for="content">Content</label>
+                <input type="text" min="0" max="10" class="form-control" >
+         -->
+                <button name="action" type="submit" class="btn btn-outline-default">Post</button>
+              <!-- </div> -->
+            </form>
+           
+          </div>
+      
+        
+      
+        </div>
+      
+      </div>
+      <div class="">
+        
+      </div>
+    </div>
+    <div class="col-md-3">
+      <h3>All Reviews</h3>
+        {% for review in reviews%}
+          <div class="card">
+            <div class="card-body">
+              <div class="row">
+                <div class="">
+                  <h5 class="text-left"> <strong>Name :</strong> {{review.user.username}}</h5>
+                  <small>Design: {{review.design}}</small>
+                  <small>Usability: {{review.usability}}</small>
+                  <small>Content: {{review.content}}</small>
+                </div>
+
+                <div class="">
+                  <h3>Comment</h3>
+                  <p>{{review.review}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+      <br> Brand 
+        
+        {%endfor%}
+    </div>
+  </div>
+</div>
+
+<!-- Card -->
+{%endblock%}

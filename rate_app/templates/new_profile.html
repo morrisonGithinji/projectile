@@ -1,0 +1,59 @@
+{%include 'base.html'%}
+{%load bootstrap4%}
+{%load static%}
+{%block styles%}
+<link rel="stylesheet" href="{% static 'css/style.css'%}">
+
+{%endblock%}
+{%block content%}
+<div class="card" id= "card1">
+
+  <form action="" method ="POST" enctype="multipart/form-data">
+
+    {%csrf_token%}
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="">
+            {%bootstrap_form form %}
+
+            <button type="submit" class="btn btn-outline-black btn-lg">Post</button>
+
+          </div>
+          
+        </div>
+        <div class="col-md-6">
+          <img src="../../static/images/alexander-kaunas-1r-085jyT1o-unsplash.jpg" class="img-fluid" alt="Responsive image">
+        </div>
+      </div>
+      
+    </div>
+  </form>
+
+</div>
+
+<!-- 
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3"></div>
+        <div class="col-md-6">
+              <div class="title">Create a profile and be Inspired</div>
+              <hr>
+              <div class="guide">Please provide an image for your profile picture, a short description of yourself and/or what you do (bio), your location, email address and a link to your portfolio.</div>
+              <form action="" method="post" enctype="multipart/form-data">
+                {%csrf_token%}
+                {% bootstrap_form form%}
+                <input type="submit" class="btn blue-gradient" value="Create Profile">
+            </form>
+          </div>
+
+          <div class="col-md-3"></div>
+
+        </div>
+          
+         
+      
+    </div> -->
+   
+
+{%endblock%}
