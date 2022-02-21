@@ -7,7 +7,7 @@ from .models import *
 class  ProfileTest(TestCase):
   def setUp(self):
     user = User.objects.create(username='morris',password = '5431')
-    self.test = Profile(Bio='awesome',user=user)
+    self.test = Profile(Bio='awesome projects',user=user)
     
   def test_instance(self):
     self.assertTrue(isinstance(self.test,Profile))
@@ -16,7 +16,7 @@ class  ProfileTest(TestCase):
 class ProjectTest(TestCase):
     def setUp(self):
       user =User.objects.create(username='morris',password='5431')
-      profile = Profile.objects.create(user=user,Bio='we gat this',email='m@gmail.com',phone_number=155151)   
+      profile = Profile.objects.create(user=user,Bio='awesome projects',email='morrison.githinji@student.moringaschoool.com',phone_number=1234567)   
       self.test = Project(user =user,title='test',description='lets test',project_link='www.test.com',profile=profile)
       
     def test_instance(self):
@@ -40,8 +40,8 @@ class ProjectTest(TestCase):
 class ReviewTest(TestCase):
   
   def setUp(self):
-   user =User.objects.create(username='test',password='ugali')
-   profile = Profile.objects.create(user=user,Bio='we gat this',email='m@gmail.com',phone_number=155151) 
+   user =User.objects.create(username='morris',password='5431')
+   profile = Profile.objects.create(user=user,Bio='awesome project',email='morrison.githinji@student.moringaschoool.com',phone_number=1234567) 
    project = Project.objects.create(user=user,title='lets test',description='we can',project_link='www.iwill.com',profile=profile)  
     
    self.test = Review (user=user,project=project,review='you actually did it',design=5,usability=6,content=4)
