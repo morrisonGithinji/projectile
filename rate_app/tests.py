@@ -15,7 +15,7 @@ class  ProfileTest(TestCase):
     
 class ProjectTest(TestCase):
     def setUp(self):
-      user =User.objects.create(username='test',password='ugali')
+      user =User.objects.create(username='morris',password='5431')
       profile = Profile.objects.create(user=user,Bio='we gat this',email='m@gmail.com',phone_number=155151)   
       self.test = Project(user =user,title='test',description='lets test',project_link='www.test.com',profile=profile)
       
