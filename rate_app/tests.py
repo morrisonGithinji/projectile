@@ -7,7 +7,7 @@ from .models import *
 class  ProfileTest(TestCase):
   def setUp(self):
     user = User.objects.create(username='morris',password = '5431')
-    self.test = Profile(Bio='woohoo',user=user)
+    self.test = Profile(Bio='awesome',user=user)
     
   def test_instance(self):
     self.assertTrue(isinstance(self.test,Profile))
