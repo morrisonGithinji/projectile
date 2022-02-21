@@ -6,7 +6,7 @@ from .models import *
 # Create your tests here.
 class  ProfileTest(TestCase):
   def setUp(self):
-    user = User.objects.create(username='morris',password = 'ugali')
+    user = User.objects.create(username='morris',password = '5431')
     self.test = Profile(Bio='woohoo',user=user)
     
   def test_instance(self):
