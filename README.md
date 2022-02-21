@@ -1,10 +1,10 @@
 ## Title: Rate-App
 
 ## Author:
-Ebenezer Gakuo
+Morrison Njenga
 
 ## Description:
-This is an application that allows the user to upload their projects. The projects can be viewed and rated by their peers
+This is an application that allows the user to upload their projects. The projects can be viewed and rated by their collegues
 
 ## Installation:
 To install the application you can [click here](https://ebay-rate.herokuapp.com/)
